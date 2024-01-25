@@ -9,16 +9,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  check_commit:
+    environment: check commit
+    build:
+      runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+      steps:
+        - uses: actions/checkout@v3
 
-      - name: Run a one-line script
-        run: echo start!
+        - name: Run a one-line script
+          run: echo start!
 
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        - name: Run a multi-line script
+          run: |
+            echo Add other actions to build,
+            echo test, and deploy your project.
