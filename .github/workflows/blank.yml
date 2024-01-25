@@ -10,9 +10,13 @@ on:
 
 jobs:
   check_commit:
-    environment: check commit
     build:
       runs-on: ubuntu-latest
+
+      environment: check commit
+      strategy:
+        matrix:
+          node-version: [18.x]
 
       steps:
         - uses: actions/checkout@v3
